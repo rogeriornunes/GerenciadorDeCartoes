@@ -1,4 +1,4 @@
-package com.example.cardmanager.ui.components
+package com.treinamento.gerenciadordecartoes.ui.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height

@@ -1,4 +1,4 @@
-package com.example.cardmanager.ui.screens
+package com.treinamento.gerenciadordecartoes.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*

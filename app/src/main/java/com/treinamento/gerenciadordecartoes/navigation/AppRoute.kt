@@ -1,4 +1,4 @@
-package com.example.cardmanager.navigation
+package com.treinamento.gerenciadordecartoes.navigation
 
 sealed class AppRoute(val route: String) {
     data object Login : AppRoute("login")

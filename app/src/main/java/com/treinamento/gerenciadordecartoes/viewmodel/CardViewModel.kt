@@ -1,12 +1,12 @@
-package com.example.cardmanager.viewmodel
+package com.treinamento.gerenciadordecartoes.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cardmanager.data.MockCardRepository
-import com.example.cardmanager.model.CardRequest
-import com.example.cardmanager.repository.CardRepository
-import com.example.cardmanager.state.CardUiState
-import com.example.cardmanager.state.LoginUiState
+import com.treinamento.gerenciadordecartoes.data.MockCardRepository
+import com.treinamento.gerenciadordecartoes.model.CardRequest
+import com.treinamento.gerenciadordecartoes.repository.CardRepository
+import com.treinamento.gerenciadordecartoes.state.CardUiState
+import com.treinamento.gerenciadordecartoes.state.LoginUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

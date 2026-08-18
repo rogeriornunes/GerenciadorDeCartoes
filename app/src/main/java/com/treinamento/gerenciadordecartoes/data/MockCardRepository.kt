@@ -1,9 +1,9 @@
-package com.example.cardmanager.data
+package com.treinamento.gerenciadordecartoes.data
 
-import com.example.cardmanager.model.Card
-import com.example.cardmanager.model.CardRequest
-import com.example.cardmanager.model.Purchase
-import com.example.cardmanager.repository.CardRepository
+import com.treinamento.gerenciadordecartoes.model.Card
+import com.treinamento.gerenciadordecartoes.model.CardRequest
+import com.treinamento.gerenciadordecartoes.model.Purchase
+import com.treinamento.gerenciadordecartoes.repository.CardRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.map

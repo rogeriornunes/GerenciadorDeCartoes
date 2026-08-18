@@ -1,4 +1,4 @@
-package com.example.cardmanager.model
+package com.treinamento.gerenciadordecartoes.model
 
 data class CardRequest(
     val holderName: String,

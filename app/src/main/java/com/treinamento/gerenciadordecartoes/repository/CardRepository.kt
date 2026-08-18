@@ -1,8 +1,8 @@
-package com.example.cardmanager.repository
+package com.treinamento.gerenciadordecartoes.repository
 
-import com.example.cardmanager.model.Card
-import com.example.cardmanager.model.CardRequest
-import com.example.cardmanager.model.Purchase
+import com.treinamento.gerenciadordecartoes.model.Card
+import com.treinamento.gerenciadordecartoes.model.CardRequest
+import com.treinamento.gerenciadordecartoes.model.Purchase
 import kotlinx.coroutines.flow.Flow
 
 /** Contrato pronto para receber uma implementação Room/SQLite ou remota. */

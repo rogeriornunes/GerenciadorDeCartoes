@@ -1,4 +1,4 @@
-package com.example.cardmanager.navigation
+package com.treinamento.gerenciadordecartoes.navigation
 
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -11,13 +11,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.cardmanager.ui.components.BottomNavigation
-import com.example.cardmanager.ui.screens.CardDetailsScreen
-import com.example.cardmanager.ui.screens.CardListScreen
-import com.example.cardmanager.ui.screens.LoginScreen
-import com.example.cardmanager.ui.screens.ManageCardScreen
-import com.example.cardmanager.ui.screens.RequestCardScreen
-import com.example.cardmanager.viewmodel.CardViewModel
+import com.treinamento.gerenciadordecartoes.ui.components.BottomNavigation
+import com.treinamento.gerenciadordecartoes.ui.screens.CardDetailsScreen
+import com.treinamento.gerenciadordecartoes.ui.screens.CardListScreen
+import com.treinamento.gerenciadordecartoes.ui.screens.LoginScreen
+import com.treinamento.gerenciadordecartoes.ui.screens.ManageCardScreen
+import com.treinamento.gerenciadordecartoes.ui.screens.RequestCardScreen
+import com.treinamento.gerenciadordecartoes.viewmodel.CardViewModel
 
 @Composable
 fun CardManagerApp(cardViewModel: CardViewModel = viewModel()) {

@@ -1,4 +1,4 @@
-package com.example.cardmanager.ui.screens
+package com.treinamento.gerenciadordecartoes.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,11 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.cardmanager.model.Card as CreditCard
-import com.example.cardmanager.ui.components.AppButton
-import com.example.cardmanager.ui.components.CardItem
-import com.example.cardmanager.ui.components.TopBar
-import com.example.cardmanager.util.toCurrency
+import com.treinamento.gerenciadordecartoes.ui.components.AppButton
+import com.treinamento.gerenciadordecartoes.ui.components.CardItem
+import com.treinamento.gerenciadordecartoes.ui.components.TopBar
+import com.treinamento.gerenciadordecartoes.model.Card as CreditCard
+import com.treinamento.gerenciadordecartoes.util.toCurrency
 
 @Composable
 fun ManageCardScreen(

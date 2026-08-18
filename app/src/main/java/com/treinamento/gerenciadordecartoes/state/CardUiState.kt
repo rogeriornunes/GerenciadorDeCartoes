@@ -1,7 +1,7 @@
-package com.example.cardmanager.state
+package com.treinamento.gerenciadordecartoes.state
 
-import com.example.cardmanager.model.Card
-import com.example.cardmanager.model.Purchase
+import com.treinamento.gerenciadordecartoes.model.Card
+import com.treinamento.gerenciadordecartoes.model.Purchase
 
 data class CardUiState(
     val cards: List<Card> = emptyList(),

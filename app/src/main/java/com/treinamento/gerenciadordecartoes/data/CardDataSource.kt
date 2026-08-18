@@ -1,6 +1,6 @@
-package com.example.cardmanager.data
+package com.treinamento.gerenciadordecartoes.data
 
-import com.example.cardmanager.model.Card
+import com.treinamento.gerenciadordecartoes.model.Card
 
 /** Ponto de extensão para a futura fonte local (DAO do Room/SQLite). */
 interface CardDataSource {

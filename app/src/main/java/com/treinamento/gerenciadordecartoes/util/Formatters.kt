@@ -1,4 +1,4 @@
-package com.example.cardmanager.util
+package com.treinamento.gerenciadordecartoes.util
 
 import java.text.NumberFormat
 import java.util.Locale

@@ -1,4 +1,4 @@
-package com.example.cardmanager.ui.components
+package com.treinamento.gerenciadordecartoes.ui.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.AddCard
@@ -11,7 +11,7 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.example.cardmanager.navigation.AppRoute
+import com.treinamento.gerenciadordecartoes.navigation.AppRoute
 
 @Composable
 fun BottomNavigation(currentRoute: String?, onNavigate: (String) -> Unit) {

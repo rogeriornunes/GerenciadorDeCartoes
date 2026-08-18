@@ -1,4 +1,4 @@
-package com.example.cardmanager.state
+package com.treinamento.gerenciadordecartoes.state
 
 data class LoginUiState(
     val email: String = "aluno@exemplo.com",

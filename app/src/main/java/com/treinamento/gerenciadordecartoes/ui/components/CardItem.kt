@@ -1,4 +1,4 @@
-package com.example.cardmanager.ui.components
+package com.treinamento.gerenciadordecartoes.ui.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.background
@@ -18,10 +18,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.cardmanager.model.Card as CreditCard
-import com.example.cardmanager.ui.theme.CardBlue
-import com.example.cardmanager.ui.theme.CardPurple
-import com.example.cardmanager.util.toCurrency
+import com.treinamento.gerenciadordecartoes.model.Card as CreditCard
+import com.treinamento.gerenciadordecartoes.ui.theme.CardBlue
+import com.treinamento.gerenciadordecartoes.ui.theme.CardPurple
+import com.treinamento.gerenciadordecartoes.util.toCurrency
+import com.treinamento.gerenciadordecartoes.ui.theme.CardBlue
 
 @Composable
 fun CardItem(card: CreditCard, onClick: () -> Unit, modifier: Modifier = Modifier) {

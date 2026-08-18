@@ -1,4 +1,4 @@
-package com.example.cardmanager.ui.theme
+package com.treinamento.gerenciadordecartoes.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme
