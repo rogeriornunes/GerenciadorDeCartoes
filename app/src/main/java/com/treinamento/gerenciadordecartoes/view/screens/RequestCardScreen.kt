@@ -1,4 +1,4 @@
-package com.treinamento.gerenciadordecartoes.ui.screens
+package com.treinamento.gerenciadordecartoes.view.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*

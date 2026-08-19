@@ -24,13 +24,13 @@ Requisitos de ambiente: Android Studio atual, JDK 17 e Android SDK 36. O login d
 ## Arquitetura
 
 ```text
-com.example.cardmanager
+com.treinamento.gerenciadordecartoes
 ├── data/          MockCardRepository e contrato de fonte local
 ├── model/         Card, Purchase e CardRequest
 ├── navigation/    rotas e NavHost
 ├── repository/    contrato CardRepository
 ├── state/         estados imutáveis da interface
-├── ui/
+├── view/
 │   ├── components/ componentes reutilizáveis
 │   ├── screens/    cinco telas Compose
 │   └── theme/      cores e tema

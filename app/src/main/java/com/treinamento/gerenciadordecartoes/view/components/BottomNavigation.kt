@@ -1,7 +1,6 @@
-package com.treinamento.gerenciadordecartoes.ui.components
+package com.treinamento.gerenciadordecartoes.view.components
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.AddCard
 import androidx.compose.material.icons.rounded.CreditCard
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Person

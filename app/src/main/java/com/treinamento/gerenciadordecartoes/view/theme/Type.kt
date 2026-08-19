@@ -1,4 +1,4 @@
-package com.treinamento.gerenciadordecartoes.ui.theme
+package com.treinamento.gerenciadordecartoes.view.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

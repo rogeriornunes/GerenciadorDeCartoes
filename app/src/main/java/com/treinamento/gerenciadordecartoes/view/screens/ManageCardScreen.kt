@@ -1,4 +1,4 @@
-package com.treinamento.gerenciadordecartoes.ui.screens
+package com.treinamento.gerenciadordecartoes.view.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -13,9 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.treinamento.gerenciadordecartoes.ui.components.AppButton
-import com.treinamento.gerenciadordecartoes.ui.components.CardItem
-import com.treinamento.gerenciadordecartoes.ui.components.TopBar
+import com.treinamento.gerenciadordecartoes.view.components.AppButton
+import com.treinamento.gerenciadordecartoes.view.components.CardItem
+import com.treinamento.gerenciadordecartoes.view.components.TopBar
 import com.treinamento.gerenciadordecartoes.model.Card as CreditCard
 import com.treinamento.gerenciadordecartoes.util.toCurrency
 

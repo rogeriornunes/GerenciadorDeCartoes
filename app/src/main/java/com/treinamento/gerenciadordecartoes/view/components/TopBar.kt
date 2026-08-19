@@ -1,4 +1,4 @@
-package com.treinamento.gerenciadordecartoes.ui.components
+package com.treinamento.gerenciadordecartoes.view.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack

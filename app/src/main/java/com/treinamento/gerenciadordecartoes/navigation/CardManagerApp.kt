@@ -11,12 +11,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.treinamento.gerenciadordecartoes.ui.components.BottomNavigation
-import com.treinamento.gerenciadordecartoes.ui.screens.CardDetailsScreen
-import com.treinamento.gerenciadordecartoes.ui.screens.CardListScreen
-import com.treinamento.gerenciadordecartoes.ui.screens.LoginScreen
-import com.treinamento.gerenciadordecartoes.ui.screens.ManageCardScreen
-import com.treinamento.gerenciadordecartoes.ui.screens.RequestCardScreen
+import com.treinamento.gerenciadordecartoes.view.components.BottomNavigation
+import com.treinamento.gerenciadordecartoes.view.screens.CardDetailsScreen
+import com.treinamento.gerenciadordecartoes.view.screens.CardListScreen
+import com.treinamento.gerenciadordecartoes.view.screens.LoginScreen
+import com.treinamento.gerenciadordecartoes.view.screens.ManageCardScreen
+import com.treinamento.gerenciadordecartoes.view.screens.RequestCardScreen
 import com.treinamento.gerenciadordecartoes.viewmodel.CardViewModel
 
 @Composable
