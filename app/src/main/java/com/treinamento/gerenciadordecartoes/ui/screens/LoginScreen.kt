@@ -53,20 +53,8 @@ fun LoginScreen(
         Spacer(Modifier.height(12.dp))
         OutlinedTextField(state.password, onPasswordChange, label = { Text("Senha") }, singleLine = true, visualTransformation = PasswordVisualTransformation(), colors = fieldColors, shape = RoundedCornerShape(9.dp), modifier = Modifier.fillMaxWidth())
         state.error?.let { Text(it, color = Color(0xFFFFB4AB), modifier = Modifier.padding(top = 8.dp)) }
-        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-            Checkbox(rememberAccess, { rememberAccess = it })
-            Text("Lembrar meu acesso", color = Color.White, style = MaterialTheme.typography.bodySmall)
-            Spacer(Modifier.weight(1f))
-            Text("Esqueci minha senha", color = Color(0xFFBDD6F1), style = MaterialTheme.typography.bodySmall)
-        }
         Spacer(Modifier.height(18.dp))
         AppButton("Entrar", onLogin, loading = state.isLoading)
-        Spacer(Modifier.height(20.dp))
-        Text("ou entre com", color = Color(0xFFC9DAEB), modifier = Modifier.align(Alignment.CenterHorizontally))
-        Spacer(Modifier.height(12.dp))
-        Box(Modifier.align(Alignment.CenterHorizontally).border(1.dp, Color(0xFF5F83A8), RoundedCornerShape(12.dp)).padding(12.dp)) {
-            Icon(Icons.Rounded.Fingerprint, "Entrar com biometria", tint = Color.White)
-        }
         Spacer(Modifier.height(18.dp))
         Text("Ainda não tem conta? Cadastre-se", color = Color(0xFFD7E5F3), style = MaterialTheme.typography.bodySmall, modifier = Modifier.align(Alignment.CenterHorizontally))
     }
