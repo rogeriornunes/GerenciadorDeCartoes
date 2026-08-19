@@ -1,58 +1,32 @@
 package com.treinamento.gerenciadordecartoes.ui.theme
 
-import android.app.Activity
-import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
+val Navy = Color(0xFF172B4D)
+val DeepNavy = Color(0xFF07386F)
+val Blue = Color(0xFF246BEB)
+val Purple = Color(0xFF6549F5)
+val CardBlue = Color(0xFF1676E9)
+val CardPurple = Color(0xFF4533C8)
+val Aqua = Color(0xFF32C9AF)
+val PaleBlue = Color(0xFFEEF3FF)
+val Background = Color(0xFFF7F8FC)
+val Success = Color(0xFF11845B)
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
+private val Colors = lightColorScheme(
+    primary = Blue,
     onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    secondary = Navy,
+    background = Background,
+    surface = Color.White,
+    surfaceVariant = Color(0xFFF0F3FA),
+    error = Color(0xFFBA1A1A),
 )
 
 @Composable
-fun GerenciadorDeCartoesTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
-
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
-    )
+fun CardManagerTheme(content: @Composable () -> Unit) {
+    MaterialTheme(colorScheme = Colors, content = content)
 }
