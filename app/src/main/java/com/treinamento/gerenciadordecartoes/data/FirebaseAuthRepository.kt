@@ -54,14 +54,20 @@ class FirebaseAuthRepository(
         },
     )
 
-    private fun Throwable.toUserMessage(): String = when ((this as? FirebaseAuthException)?.errorCode) {
-        "ERROR_INVALID_EMAIL" -> "E-mail inválido."
-        "ERROR_INVALID_CREDENTIAL", "ERROR_WRONG_PASSWORD", "ERROR_USER_NOT_FOUND" ->
-            "E-mail ou senha incorretos."
-        "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está cadastrado."
-        "ERROR_WEAK_PASSWORD" -> "A senha deve ter pelo menos 6 caracteres."
-        "ERROR_NETWORK_REQUEST_FAILED" -> "Sem conexão. Verifique a internet e tente novamente."
-        "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas. Aguarde um pouco e tente novamente."
-        else -> message ?: "Não foi possível autenticar. Tente novamente."
+    private fun Throwable.toUserMessage(): String {
+        if (message?.contains("CONFIGURATION_NOT_FOUND", ignoreCase = true) == true) {
+            return "Ative o provedor E-mail/senha no Firebase Authentication e tente novamente."
+        }
+
+        return when ((this as? FirebaseAuthException)?.errorCode) {
+            "ERROR_INVALID_EMAIL" -> "E-mail inválido."
+            "ERROR_INVALID_CREDENTIAL", "ERROR_WRONG_PASSWORD", "ERROR_USER_NOT_FOUND" ->
+                "E-mail ou senha incorretos."
+            "ERROR_EMAIL_ALREADY_IN_USE" -> "Este e-mail já está cadastrado."
+            "ERROR_WEAK_PASSWORD" -> "A senha deve ter pelo menos 6 caracteres."
+            "ERROR_NETWORK_REQUEST_FAILED" -> "Sem conexão. Verifique a internet e tente novamente."
+            "ERROR_TOO_MANY_REQUESTS" -> "Muitas tentativas. Aguarde um pouco e tente novamente."
+            else -> message ?: "Não foi possível autenticar. Tente novamente."
+        }
     }
 }
