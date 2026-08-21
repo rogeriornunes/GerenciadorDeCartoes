@@ -7,6 +7,7 @@ import com.treinamento.gerenciadordecartoes.model.CardRequest
 import com.treinamento.gerenciadordecartoes.repository.CardRepository
 import com.treinamento.gerenciadordecartoes.state.CardUiState
 import com.treinamento.gerenciadordecartoes.state.LoginUiState
+import com.treinamento.gerenciadordecartoes.state.RegisterUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -21,6 +22,9 @@ class CardViewModel(
 
     private val _loginState = MutableStateFlow(LoginUiState())
     val loginState: StateFlow<LoginUiState> = _loginState.asStateFlow()
+
+    private val _registerState = MutableStateFlow(RegisterUiState())
+    val registerState: StateFlow<RegisterUiState> = _registerState.asStateFlow()
 
     init {
         viewModelScope.launch {
@@ -39,6 +43,10 @@ class CardViewModel(
     fun updateEmail(value: String) = _loginState.update { it.copy(email = value, error = null) }
     fun updatePassword(value: String) = _loginState.update { it.copy(password = value, error = null) }
 
+    fun updateRegisterName(value: String) = _registerState.update { it.copy(name = value, error = null) }
+    fun updateRegisterEmail(value: String) = _registerState.update { it.copy(email = value, error = null) }
+    fun updateRegisterPassword(value: String) = _registerState.update { it.copy(password = value, error = null) }
+
     fun login(onSuccess: () -> Unit) = viewModelScope.launch {
         val form = _loginState.value
         _loginState.update { it.copy(isLoading = true, error = null) }
@@ -46,6 +54,15 @@ class CardViewModel(
             .onSuccess { onSuccess() }
             .onFailure { error -> _loginState.update { it.copy(error = error.message) } }
         _loginState.update { it.copy(isLoading = false) }
+    }
+
+    fun register(onSuccess: () -> Unit) = viewModelScope.launch {
+        val form = _registerState.value
+        _registerState.update { it.copy(isLoading = true, error = null) }
+        repository.register(form.name, form.email, form.password)
+            .onSuccess { onSuccess() }
+            .onFailure { error -> _registerState.update { it.copy(error = error.message) } }
+        _registerState.update { it.copy(isLoading = false) }
     }
 
     fun selectCard(cardId: String) {

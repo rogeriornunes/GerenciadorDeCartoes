@@ -2,6 +2,7 @@ package com.treinamento.gerenciadordecartoes.navigation
 
 sealed class AppRoute(val route: String) {
     data object Login : AppRoute("login")
+    data object Register : AppRoute("register")
     data object Cards : AppRoute("cards")
     data object Details : AppRoute("details/{cardId}") {
         fun create(cardId: String) = "details/$cardId"

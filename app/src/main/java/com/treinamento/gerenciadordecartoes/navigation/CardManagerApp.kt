@@ -15,6 +15,7 @@ import com.treinamento.gerenciadordecartoes.view.components.BottomNavigation
 import com.treinamento.gerenciadordecartoes.view.screens.CardDetailsScreen
 import com.treinamento.gerenciadordecartoes.view.screens.CardListScreen
 import com.treinamento.gerenciadordecartoes.view.screens.LoginScreen
+import com.treinamento.gerenciadordecartoes.view.screens.RegisterScreen
 import com.treinamento.gerenciadordecartoes.view.screens.ManageCardScreen
 import com.treinamento.gerenciadordecartoes.view.screens.RequestCardScreen
 import com.treinamento.gerenciadordecartoes.viewmodel.CardViewModel
@@ -56,6 +57,26 @@ fun CardManagerApp(cardViewModel: CardViewModel = viewModel()) {
                             }
                         }
                     },
+                    onRegisterClick = {
+                        navController.navigate(AppRoute.Register.route)
+                    }
+                )
+            }
+            composable(AppRoute.Register.route) {
+                val state by cardViewModel.registerState.collectAsStateWithLifecycle()
+                RegisterScreen(
+                    state = state,
+                    onNameChange = cardViewModel::updateRegisterName,
+                    onEmailChange = cardViewModel::updateRegisterEmail,
+                    onPasswordChange = cardViewModel::updateRegisterPassword,
+                    onRegister = {
+                        cardViewModel.register {
+                            navController.navigate(AppRoute.Cards.route) {
+                                popUpTo(AppRoute.Login.route) { inclusive = true }
+                            }
+                        }
+                    },
+                    onBack = { navController.popBackStack() }
                 )
             }
             composable(AppRoute.Cards.route) {

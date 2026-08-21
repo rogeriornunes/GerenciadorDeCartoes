@@ -33,6 +33,10 @@ class MockCardRepository : CardRepository {
         if (email.isNotBlank() && password.length >= 4) Result.success(Unit)
         else Result.failure(IllegalArgumentException("Informe e-mail e senha (mínimo de 4 caracteres)."))
 
+    override suspend fun register(name: String, email: String, password: String): Result<Unit> =
+        if (name.isNotBlank() && email.isNotBlank() && password.length >= 4) Result.success(Unit)
+        else Result.failure(IllegalArgumentException("Preencha todos os campos corretamente (senha mín. 4 caracteres)."))
+
     override suspend fun requestCard(request: CardRequest): Result<Unit> = Result.success(Unit)
 
     override suspend fun setCardBlocked(cardId: String, blocked: Boolean): Result<Unit> {
