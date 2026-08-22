@@ -22,7 +22,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class CardViewModel(
+class CardViewModel @JvmOverloads constructor(
     application: Application,
     private val repository: CardRepository = OfflineFirstCardRepository(
         RoomCardDataSource(CardDatabase.getInstance(application).cardDao()),
