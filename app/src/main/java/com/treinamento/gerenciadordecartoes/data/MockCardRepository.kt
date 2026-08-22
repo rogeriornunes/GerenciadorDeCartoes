@@ -2,6 +2,7 @@ package com.treinamento.gerenciadordecartoes.data
 
 import com.treinamento.gerenciadordecartoes.model.Card
 import com.treinamento.gerenciadordecartoes.model.CardRequest
+import com.treinamento.gerenciadordecartoes.model.CardBlockStatus
 import com.treinamento.gerenciadordecartoes.model.Purchase
 import com.treinamento.gerenciadordecartoes.repository.CardRepository
 import kotlinx.coroutines.flow.Flow
@@ -19,8 +20,8 @@ class MockCardRepository : CardRepository {
 
     override suspend fun requestCard(request: CardRequest): Result<Unit> = Result.success(Unit)
 
-    override suspend fun setCardBlocked(cardId: String, blocked: Boolean): Result<Unit> {
-        cards.value = cards.value.map { if (it.id == cardId) it.copy(isBlocked = blocked) else it }
+    override suspend fun setCardBlockStatus(cardId: String, status: CardBlockStatus): Result<Unit> {
+        cards.value = cards.value.map { if (it.id == cardId) it.copy(blockStatus = status) else it }
         return Result.success(Unit)
     }
 

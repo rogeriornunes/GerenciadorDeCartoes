@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.treinamento.gerenciadordecartoes.data.FirebaseAuthRepository
 import com.treinamento.gerenciadordecartoes.model.CardRequest
+import com.treinamento.gerenciadordecartoes.model.CardBlockStatus
 import com.treinamento.gerenciadordecartoes.repository.CardRepository
 import com.treinamento.gerenciadordecartoes.repository.AuthRepository
 import com.treinamento.gerenciadordecartoes.repository.FirebaseCardRepository
@@ -99,11 +100,14 @@ class CardViewModel(
         }
     }
 
-    fun setBlocked(blocked: Boolean) = viewModelScope.launch {
+    fun setBlockStatus(status: CardBlockStatus) = viewModelScope.launch {
         val id = _uiState.value.selectedCardId ?: return@launch
-        repository.setCardBlocked(id, blocked)
+        repository.setCardBlockStatus(id, status)
             .onSuccess {
-                showMessage(if (blocked) "Cartão bloqueado." else "Cartão desbloqueado.")
+                showMessage(
+                    if (status == CardBlockStatus.ACTIVE) "Cartão desbloqueado."
+                    else "Status alterado para ${status.displayName.lowercase()}."
+                )
             }
             .onFailure { showMessage(it.toFirestoreMessage()) }
     }

@@ -1,6 +1,7 @@
 package com.treinamento.gerenciadordecartoes.data.remote
 
 import com.treinamento.gerenciadordecartoes.model.Card
+import com.treinamento.gerenciadordecartoes.model.CardBlockStatus
 
 /** Formato persistido em users/{uid}/cards/{cardId}. */
 data class FirestoreCardEntity(
@@ -11,6 +12,7 @@ data class FirestoreCardEntity(
     val usedLimit: Double = 0.0,
     val dueDay: Int = 1,
     val isBlocked: Boolean = false,
+    val blockStatus: String = "",
 ) {
     fun toModel(id: String) = Card(
         id = id,
@@ -20,7 +22,7 @@ data class FirestoreCardEntity(
         limit = limit,
         usedLimit = usedLimit,
         dueDay = dueDay,
-        isBlocked = isBlocked,
+        blockStatus = CardBlockStatus.fromFirebase(blockStatus, isBlocked),
     )
 
     companion object {
@@ -32,6 +34,7 @@ data class FirestoreCardEntity(
             usedLimit = card.usedLimit,
             dueDay = card.dueDay,
             isBlocked = card.isBlocked,
+            blockStatus = card.blockStatus.firebaseValue,
         )
     }
 }

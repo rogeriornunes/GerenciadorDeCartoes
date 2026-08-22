@@ -6,6 +6,7 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.treinamento.gerenciadordecartoes.data.MockCardData
 import com.treinamento.gerenciadordecartoes.model.Card
 import com.treinamento.gerenciadordecartoes.model.CardRequest
+import com.treinamento.gerenciadordecartoes.model.CardBlockStatus
 import com.treinamento.gerenciadordecartoes.model.Purchase
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
@@ -90,10 +91,15 @@ class FirebaseCardDataSource(
         awaitTask { done -> document.set(entity).addOnCompleteListener { done(it.exception) } }
     }
 
-    suspend fun setCardBlocked(cardId: String, blocked: Boolean) {
+    suspend fun setCardBlockStatus(cardId: String, status: CardBlockStatus) {
         val uid = requireUid()
         awaitTask { done ->
-            cards(uid).document(cardId).update("isBlocked", blocked)
+            cards(uid).document(cardId).update(
+                mapOf(
+                    "blockStatus" to status.firebaseValue,
+                    "isBlocked" to status.isBlocked,
+                ),
+            )
                 .addOnCompleteListener { done(it.exception) }
         }
     }
