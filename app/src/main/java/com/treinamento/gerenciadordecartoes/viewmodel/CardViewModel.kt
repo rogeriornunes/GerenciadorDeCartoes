@@ -1,13 +1,16 @@
 package com.treinamento.gerenciadordecartoes.viewmodel
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.treinamento.gerenciadordecartoes.data.FirebaseAuthRepository
 import com.treinamento.gerenciadordecartoes.model.CardRequest
 import com.treinamento.gerenciadordecartoes.model.CardBlockStatus
 import com.treinamento.gerenciadordecartoes.repository.CardRepository
 import com.treinamento.gerenciadordecartoes.repository.AuthRepository
-import com.treinamento.gerenciadordecartoes.repository.FirebaseCardRepository
+import com.treinamento.gerenciadordecartoes.data.local.CardDatabase
+import com.treinamento.gerenciadordecartoes.data.local.RoomCardDataSource
+import com.treinamento.gerenciadordecartoes.repository.OfflineFirstCardRepository
 import com.treinamento.gerenciadordecartoes.state.CardUiState
 import com.treinamento.gerenciadordecartoes.state.LoginUiState
 import com.treinamento.gerenciadordecartoes.state.ProfileUiState
@@ -20,9 +23,12 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class CardViewModel(
-    private val repository: CardRepository = FirebaseCardRepository(),
+    application: Application,
+    private val repository: CardRepository = OfflineFirstCardRepository(
+        RoomCardDataSource(CardDatabase.getInstance(application).cardDao()),
+    ),
     private val authRepository: AuthRepository = FirebaseAuthRepository(),
-) : ViewModel() {
+) : AndroidViewModel(application) {
     private val _uiState = MutableStateFlow(CardUiState(isLoading = true))
     val uiState: StateFlow<CardUiState> = _uiState.asStateFlow()
 
