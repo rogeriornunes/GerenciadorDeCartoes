@@ -10,20 +10,8 @@ import kotlinx.coroutines.flow.map
 
 /** Dados em memória. Troque esta classe por LocalCardRepository ao adicionar Room. */
 class MockCardRepository : CardRepository {
-    private val cards = MutableStateFlow(
-        listOf(
-            Card("1", "Alex Silva", "4582", "Visa Platinum", 8_000.0, 2_340.75, 12),
-            Card("2", "Alex Silva", "9017", "Mastercard Gold", 4_500.0, 890.20, 5, true),
-        )
-    )
-    private val purchases = MutableStateFlow(
-        listOf(
-            Purchase("p1", "1", "Supermercado Central", "Hoje, 10:42", 186.90, "Alimentação"),
-            Purchase("p2", "1", "StreamPlay", "15 ago", 39.90, "Assinaturas"),
-            Purchase("p3", "1", "Posto Avenida", "13 ago", 250.00, "Transporte"),
-            Purchase("p4", "2", "Livraria Horizonte", "10 ago", 74.50, "Compras"),
-        )
-    )
+    private val cards = MutableStateFlow(MockCardData.cards)
+    private val purchases = MutableStateFlow(MockCardData.purchases)
 
     override fun observeCards(): Flow<List<Card>> = cards
     override fun observePurchases(cardId: String): Flow<List<Purchase>> =
