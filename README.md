@@ -31,7 +31,8 @@ Principais funcionalidades:
 - Persistência local com Room/SQLite.
 - Sincronização dos dados com Cloud Firestore.
 - Fila local para operações realizadas sem internet.
-- Carga inicial de cartões e compras para novos usuários.
+- Cadastro manual de cartões fictícios pelo usuário autenticado.
+- Lançamento manual de compras com validação de bloqueio e limite disponível.
 
 Os dados de cartão são didáticos. O aplicativo não armazena número completo, CVV nem realiza transações financeiras reais.
 
@@ -95,6 +96,7 @@ Operações offline suportadas:
 - `UPSERT_CARD`
 - `UPDATE_LIMIT`
 - `UPDATE_BLOCK_STATUS`
+- `UPSERT_PURCHASE`
 
 ### Camada de dados remota
 
