@@ -61,7 +61,7 @@ fun RequestCardScreen(
             FormField(
                 cardNumber,
                 { cardNumber = it.filter(Char::isDigit).take(19) },
-                "Número do cartão fake",
+                "Número do cartão",
                 "13 a 19 dígitos",
                 KeyboardType.Number,
             )
@@ -70,7 +70,7 @@ fun RequestCardScreen(
             FormField(
                 securityCode,
                 { securityCode = it.filter(Char::isDigit).take(4) },
-                "CVC fake",
+                "CVC",
                 "3 ou 4 dígitos",
                 KeyboardType.NumberPassword,
             )
